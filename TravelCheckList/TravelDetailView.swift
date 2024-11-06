@@ -8,11 +8,31 @@
 import SwiftUI
 
 struct TravelDetailView: View {
+    
+    var chosenTravel: TravelCheckModel
+    
+    @State var seen = false
+    
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            
+        Text(chosenTravel.name)
+            .font(.largeTitle)
+            .padding()
+            .foregroundColor(self.seen ? .blue : .red)
+        
+        Text(chosenTravel.Description)
+                .font(.largeTitle)
+                .padding()
+            
+            SeenButton(seenOrNot: $seen)
+            
     }
 }
+}
+
 
 #Preview {
-    TravelDetailView()
+    TravelDetailView(chosenTravel:  travelCheck1)
 }

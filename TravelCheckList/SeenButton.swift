@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct SeenButton: View {
+    
+    
+    @Binding var seenOrNot : Bool
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+      
+        Button(action: {
+            
+            self.seenOrNot.toggle()
+            
+        }) {
+            Text("Seen / Not Seen")
+        }
+        
     }
 }
 
 #Preview {
-    SeenButton()
+   Text("")
 }

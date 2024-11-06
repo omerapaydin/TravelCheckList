@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var characterName = "Luke Skywalker"
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text(characterName).padding().font(.largeTitle)
+            
+            Button (action:{
+                self.characterName = "Darth Vader"
+            } ) {
+                Text("Change Chaacter")
+            }
+
+            TextField("Enter Character", text: $characterName)
+            
         }
-        .padding()
+        
     }
 }
 
